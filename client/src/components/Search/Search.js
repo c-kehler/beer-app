@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { favoriteBeer, createBeer } from "../../services/api-helper";
 import BeerInfo from "../BeerInfo/BeerInfo";
+require("dotenv").config();
 var Rating = require("react-rating");
 
 class Search extends Component {
@@ -17,13 +18,14 @@ class Search extends Component {
     this.setState({
       input: event.target.value
     });
+    // console.log(process.env.API_KEY);
   };
 
   handleSearch = async e => {
     e.preventDefault();
     await axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=eeb5c6ac9e5bebeffcfce34709baa07f`
+        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=${process.env.REACT_APP_API_KEY}`
       )
       .then(res => {
         const response = res.data;

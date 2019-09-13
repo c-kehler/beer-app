@@ -25915,3 +25915,127 @@ Processing by FavoritesController#show_favorites as HTML
 Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 1956)
 
 
+Started DELETE "/beers/3" for ::1 at 2019-09-13 14:45:41 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:56:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer::HABTM_Users Destroy (0.5ms)[0m  [1m[31mDELETE FROM "beers_users" WHERE "beers_users"."beer_id" = $1[0m  [["beer_id", 3]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer Destroy (0.3ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 7.3ms | Allocations: 3061)
+
+
+Started GET "/favorites/3" for ::1 at 2019-09-13 14:45:41 -0400
+Processing by FavoritesController#show_favorites as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8:in `show_favorites'
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers" INNER JOIN "beers_users" ON "beers"."id" = "beers_users"."beer_id" WHERE "beers_users"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/favorites_controller.rb:9:in `show_favorites'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1805)
+
+
+Started DELETE "/beers/4" for ::1 at 2019-09-13 14:45:42 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:56:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer::HABTM_Users Destroy (0.2ms)[0m  [1m[31mDELETE FROM "beers_users" WHERE "beers_users"."beer_id" = $1[0m  [["beer_id", 4]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 6.5ms | Allocations: 2923)
+
+
+Started GET "/favorites/3" for ::1 at 2019-09-13 14:45:42 -0400
+Processing by FavoritesController#show_favorites as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8:in `show_favorites'
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers" INNER JOIN "beers_users" ON "beers"."id" = "beers_users"."beer_id" WHERE "beers_users"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/favorites_controller.rb:9:in `show_favorites'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1647)
+
+
+Started POST "/beers" for ::1 at 2019-09-13 14:47:48 -0400
+Processing by BeersController#create as HTML
+  Parameters: {"beer"=>{"name"=>"Sour Inc: Sour Stout With Cherries", "image"=>"https://brewerydb-images.s3.amazonaws.com/beer/nbVcip/upload_9ts7BR-large.png", "rating"=>2.5, "review"=>"this is great"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beers_controller.rb:34:in `create'
+  [1m[36mBeer Create (0.3ms)[0m  [1m[32mINSERT INTO "beers" ("name", "image", "rating", "review", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sour Inc: Sour Stout With Cherries"], ["image", "https://brewerydb-images.s3.amazonaws.com/beer/nbVcip/upload_9ts7BR-large.png"], ["rating", 2.5], ["review", "this is great"], ["created_at", "2019-09-13 18:47:48.459398"], ["updated_at", "2019-09-13 18:47:48.459398"]]
+  ↳ app/controllers/beers_controller.rb:34:in `create'
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beers_controller.rb:34:in `create'
+Completed 201 Created in 10ms (Views: 0.6ms | ActiveRecord: 6.1ms | Allocations: 2431)
+
+
+Started GET "/beers/name/?name=Sour%20Inc:%20Sour%20Stout%20With%20Cherries" for ::1 at 2019-09-13 14:47:48 -0400
+Processing by BeersController#name as HTML
+  Parameters: {"name"=>"Sour Inc: Sour Stout With Cherries"}
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."name" = $1 LIMIT $2[0m  [["name", "Sour Inc: Sour Stout With Cherries"], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:22:in `name'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 891)
+
+
+Started POST "/favorites/3/5" for ::1 at 2019-09-13 14:47:48 -0400
+Processing by FavoritesController#favorites as HTML
+  Parameters: {"user_id"=>"3", "beer_id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:13:in `favorites'
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:14:in `favorites'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:15:in `favorites'
+  [1m[36mUser::HABTM_Beers Create (0.3ms)[0m  [1m[32mINSERT INTO "beers_users" ("user_id", "beer_id") VALUES ($1, $2)[0m  [["user_id", 3], ["beer_id", 5]]
+  ↳ app/controllers/favorites_controller.rb:15:in `favorites'
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:15:in `favorites'
+Completed 204 No Content in 14ms (ActiveRecord: 7.2ms | Allocations: 3801)
+
+
+Started GET "/favorites/3" for ::1 at 2019-09-13 14:47:50 -0400
+Processing by FavoritesController#show_favorites as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8:in `show_favorites'
+  [1m[36mBeer Load (8.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers" INNER JOIN "beers_users" ON "beers"."id" = "beers_users"."beer_id" WHERE "beers_users"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/favorites_controller.rb:9:in `show_favorites'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 9.1ms | Allocations: 1798)
+
+
+Started DELETE "/beers/5" for ::1 at 2019-09-13 14:47:56 -0400
+Processing by BeersController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers" WHERE "beers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/beers_controller.rb:56:in `set_beer'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer::HABTM_Users Destroy (0.4ms)[0m  [1m[31mDELETE FROM "beers_users" WHERE "beers_users"."beer_id" = $1[0m  [["beer_id", 5]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[36mBeer Destroy (0.2ms)[0m  [1m[31mDELETE FROM "beers" WHERE "beers"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/beers_controller.rb:50:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.3ms | Allocations: 2922)
+
+
+Started GET "/favorites/3" for ::1 at 2019-09-13 14:47:56 -0400
+Processing by FavoritesController#show_favorites as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8:in `show_favorites'
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers" INNER JOIN "beers_users" ON "beers"."id" = "beers_users"."beer_id" WHERE "beers_users"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/favorites_controller.rb:9:in `show_favorites'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1647)
+
+
