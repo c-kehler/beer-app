@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { favoriteBeer, createBeer } from "../../services/api-helper";
 import BeerInfo from "../BeerInfo/BeerInfo";
+var Rating = require("react-rating");
 
 class Search extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ class Search extends Component {
           image={
             typeof beer.labels === "undefined" ? "test" : beer.labels.large
           }
-        ></BeerInfo>
+        >
+          {" "}
+        </BeerInfo>
       );
     });
   };

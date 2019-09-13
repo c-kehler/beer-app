@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_155743) do
     t.string "name"
     t.string "image"
     t.string "description"
-    t.integer "rating"
+    t.float "rating"
+    t.string "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

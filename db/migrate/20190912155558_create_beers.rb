@@ -4,7 +4,7 @@ class CreateBeers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.string :description
-      t.integer :rating
+      t.float :rating
 
       t.timestamps
     end

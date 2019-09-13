@@ -59,7 +59,7 @@ end
   end
 
   def beer_params
-    params.require(:beer).permit(:name, :image, :description, :rating)
+    params.require(:beer).permit(:name, :image, :description, :rating, :review)
   end
 
 end

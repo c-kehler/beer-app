@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/users/verify', to: 'users#verify'
   post '/favorites/:user_id/:beer_id', to: 'favorites#favorites'
+  get '/beers/id', to: 'beers#destroy'
   get '/favorites/:user_id', to: 'favorites#show_favorites'
   get '/beers/name', to: 'beers#name'
   resources :users

@@ -75,3 +75,11 @@ export const favoriteBeer = async beerId => {
     throw e;
   }
 };
+
+export const deleteBeer = async beerId => {
+  try {
+    await apiClient.delete(`/beers/${beerId}`);
+  } catch (e) {
+    throw e;
+  }
+};

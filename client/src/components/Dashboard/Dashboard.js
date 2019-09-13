@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { showFavesOfUser } from "../../services/api-helper";
+import { showFavesOfUser, deleteBeer } from "../../services/api-helper";
+var Rating = require("react-rating").default;
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,15 @@ class Dashboard extends Component {
       console.log(this.state.userBeer);
     });
   }
+  handleDelete = async id => {
+    await deleteBeer(id);
+    await showFavesOfUser().then(data => {
+      this.setState({
+        userBeer: data.beers
+      });
+    });
+    console.log(this.state.userBeer);
+  };
 
   render() {
     return (
@@ -26,7 +36,21 @@ class Dashboard extends Component {
               <p>{beer.name}</p>
               <img src={beer.image}></img>
               <p>{beer.description}</p>
-              <p>{beer.rating}</p>
+              <p>{beer.review}</p>
+              <Rating
+                emptySymbol="far fa-star fa-2x"
+                fullSymbol="fa fa-star fa-2x"
+                fractions={2}
+                initialRating={beer.rating}
+                readonly
+              />
+              <button
+                onClick={() => {
+                  this.handleDelete(beer.id);
+                }}
+              >
+                delete
+              </button>
             </div>
           );
         })}
