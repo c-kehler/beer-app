@@ -30,7 +30,6 @@ class Search extends Component {
       .then(res => {
         const response = res.data;
         this.setState({ beerResult: [response][0].data });
-        console.log(this.state.beerResult);
       });
   };
 
