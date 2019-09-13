@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   post '/auth/login', to: 'authentication#login'
   get '/users/verify', to: 'users#verify'
   post '/favorites/:user_id/:beer_id', to: 'favorites#favorites'

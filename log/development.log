@@ -26039,3 +26039,18 @@ Processing by FavoritesController#show_favorites as HTML
 Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1647)
 
 
+Started GET "/" for ::1 at 2019-09-13 15:43:02 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/charliekehler/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/charliekehler/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.0ms | Allocations: 482)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 2644)
+
+
+Started GET "/" for ::1 at 2019-09-13 15:43:02 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/charliekehler/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/charliekehler/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.5ms | Allocations: 192)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 727)
+
+
