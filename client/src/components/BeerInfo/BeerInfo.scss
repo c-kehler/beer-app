@@ -1,0 +1,26 @@
+.beer-info {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  margin: 5px;
+  button {
+    background: #ffa234;
+  }
+  img {
+    grid-column: span 2;
+    height: 100px;
+    width: 100px;
+    border-radius: 11px;
+  }
+  .beer-name {
+    grid-column: span 2;
+    padding: 1em;
+  }
+  .beer-description {
+    grid-column: span 4;
+  }
+  .rating {
+    grid-column: span 2;
+  }
+}

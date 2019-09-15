@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { favoriteBeer, createBeer } from "../../services/api-helper";
 import BeerInfo from "../BeerInfo/BeerInfo";
+import "./Search.css";
 require("dotenv").config();
 var Rating = require("react-rating");
 
@@ -41,7 +42,9 @@ class Search extends Component {
           name={beer.name}
           description={beer.description}
           image={
-            typeof beer.labels === "undefined" ? "test" : beer.labels.large
+            typeof beer.labels === "undefined"
+              ? require("./beer-placeholder.jpg")
+              : beer.labels.large
           }
         >
           {" "}
@@ -52,12 +55,21 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSearch}>
-          <input onChange={this.handleChange}></input>
-          <button type="submit">search</button>
-        </form>
-        {this.renderBeers()}
+      <div className="search-page-container">
+        <div className="search-container">
+          <form onSubmit={this.handleSearch}>
+            <input onChange={this.handleChange}></input>
+            <button type="submit">
+              <span
+                class="iconify"
+                data-icon="fe:search"
+                data-inline="false"
+              ></span>
+            </button>
+          </form>
+        </div>
+
+        <div className="search-results">{this.renderBeers()}</div>
       </div>
     );
   }

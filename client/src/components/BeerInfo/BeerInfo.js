@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { favoriteBeer, createBeer, getBeerId } from "../../services/api-helper";
+import "./BeerInfo.css";
 var Rating = require("react-rating").default;
 
 class BeerInfo extends Component {
@@ -43,20 +44,20 @@ class BeerInfo extends Component {
   };
   render() {
     return (
-      <div>
-        <hr></hr>
-        <Rating
-          emptySymbol="far fa-star fa-2x"
-          fullSymbol="fa fa-star fa-2x"
-          fractions={2}
-          onClick={rate => this.handleRate(rate)}
-          initialRating={this.state.value}
-        />
-        <div>{this.props.name}</div>
+      <div className="beer-info">
+        <div className="beer-name">{this.props.name}</div>
         <img src={this.props.image}></img>
-        <div>{this.props.description}</div>
-        <div>{this.props.rating}</div>
-        <input onChange={this.handleChange}></input>
+        <div className="beer-description">{this.props.description}</div>
+        <div className="rating">
+          <Rating
+            emptySymbol="far fa-star fa"
+            fullSymbol="fa fa-star fa"
+            fractions={2}
+            onClick={rate => this.handleRate(rate)}
+            initialRating={this.state.value}
+          />
+        </div>
+        <textarea onChange={this.handleChange}></textarea>
         <button onClick={this.handleFavorite}>Favorite</button>
       </div>
     );
