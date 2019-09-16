@@ -37,11 +37,14 @@ ActiveRecord::Schema.define(version: 2019_09_13_202609) do
   end
 
   create_table "beers", force: :cascade do |t|
+    t.string "breweryname"
     t.string "name"
     t.string "image"
+    t.string "abv"
+    t.string "ibu"
     t.string "description"
-    t.float "rating"
     t.string "review"
+    t.string "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

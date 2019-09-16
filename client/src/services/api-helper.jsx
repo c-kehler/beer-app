@@ -83,3 +83,13 @@ export const deleteBeer = async beerId => {
     throw e;
   }
 };
+
+export const UpdateBeerReview = async (beerId, value) => {
+  try {
+    const response = await apiClient.put(`/beers/${beerId}`, { rating: value });
+    console.log(response);
+    return response;
+  } catch (e) {
+    throw e;
+  }
+};

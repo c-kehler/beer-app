@@ -26,11 +26,12 @@ class Search extends Component {
     e.preventDefault();
     await axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=${process.env.REACT_APP_API_KEY}`
+        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=${process.env.REACT_APP_API_KEY}&withBreweries=Y`
       )
       .then(res => {
         const response = res.data;
         this.setState({ beerResult: [response][0].data });
+        console.log([response][0].data);
       });
   };
 
@@ -39,7 +40,10 @@ class Search extends Component {
       return (
         <BeerInfo
           key={index}
+          breweryname={beer.breweries[0].name}
           name={beer.name}
+          abv={beer.abv}
+          ibu={beer.ibu}
           description={beer.description}
           image={
             typeof beer.labels === "undefined"

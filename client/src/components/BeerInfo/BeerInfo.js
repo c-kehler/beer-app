@@ -29,8 +29,11 @@ class BeerInfo extends Component {
     let id = null;
     let beerObject = {
       beer: {
+        breweryname: this.props.breweryname,
         name: this.props.name,
         image: this.props.image,
+        abv: this.props.abv,
+        ibu: this.props.ibu,
         description: this.props.description,
         rating: this.state.value,
         review: this.state.notes
@@ -45,20 +48,32 @@ class BeerInfo extends Component {
   render() {
     return (
       <div className="beer-info">
-        <div className="beer-name">{this.props.name}</div>
         <img src={this.props.image}></img>
-        <div className="beer-description">{this.props.description}</div>
-        <div className="rating">
-          <Rating
-            emptySymbol="far fa-star fa"
-            fullSymbol="fa fa-star fa"
-            fractions={2}
-            onClick={rate => this.handleRate(rate)}
-            initialRating={this.state.value}
-          />
+        <div className="beer-info-left">
+          <p className="brewery-name">{this.props.breweryname}</p>
+          <p className="beer-name">{this.props.name}</p>
+          <div className="ibu-abv">
+            <div className="alcohol">ABV: {this.props.abv}</div>
+            <div className="ibu">IBU: {this.props.ibu}</div>
+          </div>
+          <p className="details">Details:</p>
+          <div className="beer-description">{this.props.description}</div>
         </div>
-        <textarea onChange={this.handleChange}></textarea>
-        <button onClick={this.handleFavorite}>Favorite</button>
+        <div className="beer-info-right">
+          <div className="rating">
+            <Rating
+              emptySymbol="far fa-star fa-2x"
+              fullSymbol="fa fa-star fa-2x"
+              fractions={2}
+              onClick={rate => this.handleRate(rate)}
+              initialRating={this.state.value}
+            />
+          </div>
+          <div className="button-and-text">
+            <textarea onChange={this.handleChange}></textarea>
+            <button onClick={this.handleFavorite}>Favorite</button>
+          </div>
+        </div>
       </div>
     );
   }

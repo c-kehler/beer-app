@@ -1,0 +1,109 @@
+.auth-container {
+  display: flex;
+  justify-content: center; }
+  .auth-container .auth-modal {
+    width: 30%;
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 40px; }
+    .auth-container .auth-modal .form-container {
+      padding: 30px; }
+      .auth-container .auth-modal .form-container form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+        .auth-container .auth-modal .form-container form input {
+          border: #d6d6d6 1px solid;
+          border-radius: 3px;
+          background-color: #fbfbfb;
+          height: 30px;
+          margin-bottom: 20px;
+          padding-left: 10px;
+          font-size: 15px; }
+        .auth-container .auth-modal .form-container form p {
+          color: darkgrey;
+          font-weight: 500;
+          font-size: 16px;
+          margin-bottom: 8px;
+          font-family: "Roboto", sans-serif; }
+        .auth-container .auth-modal .form-container form button {
+          align-self: center;
+          height: 40px;
+          width: 40%;
+          background-color: #ffa234;
+          border-bottom: #e6932e 3px solid;
+          border-radius: 3px;
+          color: white;
+          font-weight: 500;
+          font-size: 20px;
+          margin-top: 20px;
+          margin-bottom: 10px; }
+          .auth-container .auth-modal .form-container form button .iconify {
+            padding-right: 6px;
+            font-size: 15px; }
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent; }
+  .react-tabs__tab-list {
+    display: flex;
+    margin: 0 0 0px;
+    padding: 0;
+    border-radius: 6px 6px 0px 0px;
+    background-color: whitesmoke;
+    font-family: "Roboto", sans-serif; }
+    .react-tabs__tab-list .react-tabs__tab {
+      border-bottom: none !important;
+      color: Gray;
+      border-left: none !important;
+      border-right: none !important; }
+  .react-tabs__tab {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    position: relative;
+    list-style: none;
+    padding: 10px 12px;
+    cursor: pointer; }
+    .react-tabs__tab--selected {
+      border-color: #aaa;
+      border-top: 4px #ffa234 solid;
+      background: #fff;
+      background-color: white !important;
+      border-bottom: none !important;
+      border-right: 1px solid #aaa;
+      border-left: 1px solid #aaa;
+      color: black !important; }
+    .react-tabs__tab--disabled {
+      color: Gray;
+      cursor: default;
+      background-color: #aaa; }
+    .react-tabs__tab:focus {
+      border-color: none;
+      outline: none; }
+      .react-tabs__tab:focus:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        left: -4px;
+        right: -4px;
+        bottom: -5px;
+        background: #fff; }
+  .react-tabs__tab-panel {
+    display: none; }
+    .react-tabs__tab-panel[class*="--selected"] {
+      opacity: 1;
+      animation: fade-and-slide-in 300ms ease-out; }
+@keyframes fade-and-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-30%); }
+  to {
+    opacity: 1;
+    transform: translateY(0%); } }
+    .react-tabs__tab-panel--selected {
+      display: block; }
+
+/*# sourceMappingURL=LoginSignup.css.map */
