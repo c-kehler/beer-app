@@ -91,15 +91,15 @@
           height: 190px !important;
           padding-right: 10px;
           margin-bottom: 15px; }
-          .dashboard-page-container .dashboard-beer-info .beer-info-right .button-and-text .notes-container .notes {
-            margin-top: 35px;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 19px;
-            color: rgba(0, 0, 0, 0.61);
-            margin-bottom: 0px; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-right .button-and-text .notes {
+          margin-top: 25px;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          color: rgba(0, 0, 0, 0.61);
+          margin-bottom: 0px; }
       .dashboard-page-container .dashboard-beer-info .beer-info-right button {
         height: 45px;
         color: white;

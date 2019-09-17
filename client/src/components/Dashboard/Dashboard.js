@@ -92,8 +92,8 @@ class Dashboard extends Component {
                   />
                 </div>
                 <div className="button-and-text">
+                  <p className="notes">{beer.review ? "My Notes:" : ""}</p>
                   <div className="notes-container">
-                    <p className="notes">{beer.review ? "My Notes:" : ""}</p>
                     <p>{beer.review}</p>
                   </div>
                   <button

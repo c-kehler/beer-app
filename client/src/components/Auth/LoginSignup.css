@@ -42,6 +42,12 @@
           .auth-container .auth-modal .form-container form button .iconify {
             padding-right: 6px;
             font-size: 15px; }
+          .auth-container .auth-modal .form-container form button:active {
+            outline: none;
+            box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+            background: #db841a; }
+          .auth-container .auth-modal .form-container form button:focus {
+            outline: none; }
 
 .react-tabs {
   -webkit-tap-highlight-color: transparent; }
