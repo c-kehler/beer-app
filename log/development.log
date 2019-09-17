@@ -38679,3 +38679,13 @@ Processing by FavoritesController#show_favorites as HTML
 Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 2113)
 
 
+Started GET "/favorites/6" for ::1 at 2019-09-17 11:23:14 -0400
+Processing by FavoritesController#show_favorites as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:8:in `show_favorites'
+  [1m[36mBeer Load (2.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers" INNER JOIN "beers_users" ON "beers"."id" = "beers_users"."beer_id" WHERE "beers_users"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/favorites_controller.rb:9:in `show_favorites'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 2113)
+
+

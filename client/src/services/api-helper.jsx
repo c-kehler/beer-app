@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://beer-search-app-charlie.herokuapp.com";
 
 export const loginUser = loginData => {
   const opts = {
@@ -25,7 +25,7 @@ export const registerUser = registerData => {
   return fetch(`${baseUrl}/users/`, opts).then(resp => resp.json());
 };
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://beer-search-app-charlie.herokuapp.com";
 const JWT_TOKEN = localStorage.getItem("token");
 const apiClient = axios.create({
   baseURL: BASE_URL,
