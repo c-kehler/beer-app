@@ -1,0 +1,118 @@
+.dashboard-page-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 60px;
+  margin-left: 150px;
+  margin-right: 150px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 11px; }
+  .dashboard-page-container .dashboard-beer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white; }
+    .dashboard-page-container .dashboard-beer-info:only-child {
+      border-radius: 11px !important; }
+    .dashboard-page-container .dashboard-beer-info:nth-child(1) {
+      border-radius: 11px 11px 0px 0px; }
+    .dashboard-page-container .dashboard-beer-info:nth-child(odd) {
+      background: whitesmoke; }
+    .dashboard-page-container .dashboard-beer-info:last-child {
+      border-radius: 0px 0px 11px 11px; }
+    .dashboard-page-container .dashboard-beer-info img {
+      height: 300px;
+      min-width: 300px !important;
+      border-radius: 11px;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 0px; }
+    .dashboard-page-container .dashboard-beer-info .beer-info-left {
+      display: flex;
+      flex-direction: column;
+      margin-left: 22px;
+      justify-self: left;
+      width: 100%; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-left .brewery-name {
+        font-family: "Raleway", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 5px; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-left .beer-name {
+        margin-top: 0px;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.61); }
+      .dashboard-page-container .dashboard-beer-info .beer-info-left .ibu-abv {
+        display: flex;
+        flex-direction: row; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-left .ibu-abv .alcohol {
+          margin-right: 50px; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-left .details {
+        margin-top: 35px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(0, 0, 0, 0.61);
+        margin-bottom: 0px; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-left .beer-description-container {
+        overflow: scroll;
+        height: 160px !important;
+        padding-right: 10px;
+        margin-bottom: 0px; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-left .beer-description-container .beer-description {
+          margin-top: 7px; }
+    .dashboard-page-container .dashboard-beer-info .beer-info-right {
+      display: flex;
+      flex-direction: column;
+      min-width: 30%;
+      max-width: 30%;
+      margin-left: 50px;
+      margin-right: 25px;
+      justify-content: space-between;
+      justify-self: flex-end;
+      margin-bottom: 20px; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-right .rating {
+        margin-top: 20px;
+        align-self: flex-end; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-right .button-and-text {
+        display: flex;
+        justify-self: flex-end;
+        flex-direction: column; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-right .button-and-text .notes-container {
+          overflow: scroll;
+          height: 190px !important;
+          padding-right: 10px;
+          margin-bottom: 15px; }
+          .dashboard-page-container .dashboard-beer-info .beer-info-right .button-and-text .notes-container .notes {
+            margin-top: 35px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(0, 0, 0, 0.61);
+            margin-bottom: 0px; }
+      .dashboard-page-container .dashboard-beer-info .beer-info-right button {
+        height: 45px;
+        color: white;
+        background: #ffa234;
+        border-radius: 11px;
+        border: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-right button:active {
+          outline: none;
+          box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+          background: #db841a; }
+        .dashboard-page-container .dashboard-beer-info .beer-info-right button:focus {
+          outline: none; }
+
+/*# sourceMappingURL=Dashboard.css.map */

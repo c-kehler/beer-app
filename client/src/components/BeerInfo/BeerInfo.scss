@@ -8,13 +8,19 @@
   &:nth-child(odd) {
     background: rgb(245, 245, 245);
   }
+  &:first-child {
+    border-radius: 11px 11px 0px 0px;
+  }
+  &:last-child {
+    border-radius: 0px 0px 11px 11px;
+  }
 
   img {
     height: 300px;
     min-width: 300px !important;
     border-radius: 11px;
     padding-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 20px;
     padding-bottom: 10px;
   }
@@ -58,8 +64,14 @@
       color: rgba(0, 0, 0, 0.61);
       margin-bottom: 0px;
     }
-    .beer-description {
-      margin-top: 7px;
+    .beer-description-container {
+      overflow: scroll;
+      height: 160px !important;
+      padding-right: 10px;
+      // margin-bottom: 15px;
+      .beer-description {
+        margin-top: 7px;
+      }
     }
   }
   .beer-info-right {
@@ -86,8 +98,17 @@
         box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
         border-radius: 11px;
         border: none;
-        height: 140px;
+        height: 130px;
         margin-bottom: 15px;
+        padding: 10px;
+        font-size: 16px;
+        &:active {
+          outline: none;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.45);
+        }
       }
     }
     button {
@@ -98,6 +119,14 @@
       border: none;
       font-family: "Roboto", sans-serif;
       font-size: 18px;
+      &:active {
+        outline: none;
+        box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25);
+        background: #db841a;
+      }
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -105,5 +134,5 @@
 body {
   background-image: url("../../Images/beer-background.jpg");
   background-size: cover;
-  height: 1000%;
+  height: 100vh;
 }

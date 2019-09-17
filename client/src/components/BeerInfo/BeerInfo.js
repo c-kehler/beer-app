@@ -54,10 +54,14 @@ class BeerInfo extends Component {
           <p className="beer-name">{this.props.name}</p>
           <div className="ibu-abv">
             <div className="alcohol">ABV: {this.props.abv}</div>
-            <div className="ibu">IBU: {this.props.ibu}</div>
+            <div className="ibu">
+              {this.props.ibu ? "IBU:" : ""} {this.props.ibu}
+            </div>
           </div>
-          <p className="details">Details:</p>
-          <div className="beer-description">{this.props.description}</div>
+          <p className="details">{this.props.description ? "Details:" : ""}</p>
+          <div className="beer-description-container">
+            <div className="beer-description">{this.props.description}</div>
+          </div>
         </div>
         <div className="beer-info-right">
           <div className="rating">

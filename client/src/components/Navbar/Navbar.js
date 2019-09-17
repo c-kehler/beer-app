@@ -70,22 +70,31 @@ class Navbar extends Component {
       <header className="page-container">
         <div className="navbar-container">
           <a className="search-link" href="/">
+            <span
+              class="iconify"
+              data-icon="whh:beeralt"
+              data-inline="true"
+            ></span>
             Beer-o-meter
           </a>
           {this.state.currentUser ? (
-            <React.Fragment>
+            <div className="username-and-dashboard">
               <a className="dashboard-link" href="/dashboard">
                 Dashboard
               </a>
               <a className="username">{this.state.currentUser.username}</a>
-            </React.Fragment>
+            </div>
           ) : (
             <p></p>
           )}
           {this.state.currentUser ? (
-            <a onClick={this.handleLogout}>Logout</a>
+            <a className="login-logout" onClick={this.handleLogout}>
+              Logout
+            </a>
           ) : (
-            <a onClick={this.handleLoginButton}>Login</a>
+            <a className="login-logout" onClick={this.handleLoginButton}>
+              Login
+            </a>
           )}
         </div>
         <div>

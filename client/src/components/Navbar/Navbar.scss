@@ -1,18 +1,44 @@
 .navbar-container {
   display: flex;
+  // justify-content: center;
   font-family: "Muli", sans-serif;
-  margin: 20px;
+  margin-top: 10px;
   width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
   a {
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-right: 20px;
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
     font-weight: 500;
   }
+  .search-link {
+    font-size: 30px;
+    margin-left: 20px;
+    font-weight: bold;
+    .iconify {
+      font-size: 40px;
+      margin-right: 10px;
+    }
+  }
+  .username-and-dashboard {
+    margin-left: auto;
+    font-size: 22px;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
   .username {
-    float: right;
-    margin-right: 40px;
+    margin-left: auto;
+    font-size: 22px;
+  }
+  .login-logout {
+    align-self: flex-end;
+    padding-right: 20px;
+    font-size: 22px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-right: 0px;
   }
 }

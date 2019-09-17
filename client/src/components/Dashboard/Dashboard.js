@@ -4,6 +4,8 @@ import {
   deleteBeer,
   UpdateBeerReview
 } from "../../services/api-helper";
+import "./Dashboard.css";
+
 var Rating = require("react-rating").default;
 class Dashboard extends Component {
   constructor(props) {
@@ -49,38 +51,60 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="dashboard-page-container">
         {this.state.userBeer.map(beer => {
           return (
-            <div>
-              <p>{beer.name}</p>
+            <div className="dashboard-beer-info">
               <img src={beer.image}></img>
-              <p>{beer.description}</p>
-              <p>{beer.review}</p>
-              <Rating
-                {...this.props}
-                emptySymbol="far fa-star fa-2x"
-                placeholderSymbol="fa fa-star fa-2x"
-                fullSymbol="fa fa-star fa-2x"
-                fractions={2}
-                placeholderRating={beer.rating}
-                onClick={rate => this.handleRate(rate)}
-                onClick={async event => {
-                  await this.handleRate(event);
-                  this.updateRate(beer.id, event);
-                }}
-                // onClick={() => {
-                // this.updateRate(beer.id, this.props.value);
-                // console.log(this.state.value);
-                // }}
-              />
-              <button
-                onClick={() => {
-                  this.handleDelete(beer.id);
-                }}
-              >
-                delete
-              </button>
+              <div className="beer-info-left">
+                <p className="brewery-name">{beer.breweryname}</p>
+                <p className="beer-name">{beer.name}</p>
+                <div className="ibu-abv">
+                  <div className="alcohol">ABV: {beer.abv}</div>
+                  <div className="ibu">
+                    {beer.ibu ? "IBU:" : ""} {beer.ibu}
+                  </div>
+                </div>
+                <p className="details">{beer.description ? "Details:" : ""}</p>
+                <div className="beer-description-container">
+                  <p>{beer.description}</p>
+                </div>
+              </div>
+
+              <div className="beer-info-right">
+                <div className="rating">
+                  <Rating
+                    {...this.props}
+                    emptySymbol="far fa-star fa-2x"
+                    placeholderSymbol="fa fa-star fa-2x"
+                    fullSymbol="fa fa-star fa-2x"
+                    fractions={2}
+                    placeholderRating={beer.rating}
+                    onClick={rate => this.handleRate(rate)}
+                    onClick={async event => {
+                      await this.handleRate(event);
+                      this.updateRate(beer.id, event);
+                    }}
+                    // onClick={() => {
+                    // this.updateRate(beer.id, this.props.value);
+                    // console.log(this.state.value);
+                    // }}
+                  />
+                </div>
+                <div className="button-and-text">
+                  <div className="notes-container">
+                    <p className="notes">{beer.review ? "My Notes:" : ""}</p>
+                    <p>{beer.review}</p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.handleDelete(beer.id);
+                    }}
+                  >
+                    delete
+                  </button>
+                </div>
+              </div>
             </div>
           );
         })}
