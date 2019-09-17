@@ -26,7 +26,7 @@ class Search extends Component {
     e.preventDefault();
     await axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=${process.env.REACT_APP_API_KEY}&withBreweries=Y`
+        `https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/search?q=${this.state.input}&type=beer&key=${process.env.REACT_APP_API_KEY}&withBreweries=Y`
       )
       .then(res => {
         const response = res.data;

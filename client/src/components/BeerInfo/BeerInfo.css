@@ -82,7 +82,8 @@
         height: 130px;
         margin-bottom: 15px;
         padding: 10px;
-        font-size: 16px; }
+        font-size: 16px;
+        resize: none; }
         .beer-info .beer-info-right .button-and-text textarea:active {
           outline: none; }
         .beer-info .beer-info-right .button-and-text textarea:focus {

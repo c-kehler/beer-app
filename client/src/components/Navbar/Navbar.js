@@ -79,8 +79,8 @@ class Navbar extends Component {
           </a>
           {this.state.currentUser ? (
             <div className="username-and-dashboard">
-              <a className="dashboard-link" href="/dashboard">
-                Dashboard
+              <a className="dashboard-link" href="/mybeers">
+                My Beers
               </a>
               <a className="username">{this.state.currentUser.username}</a>
             </div>
@@ -113,7 +113,7 @@ class Navbar extends Component {
           />
 
           <Route exact path="/" render={() => <Search />} />
-          <Route exact path="/dashboard" render={() => <Dashboard />} />
+          <Route exact path="/mybeers" render={() => <Dashboard />} />
         </div>
       </header>
     );
