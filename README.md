@@ -1,24 +1,18 @@
-# README
+# Beer-o-meter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## An app to track beers you've had!
+My beer app queries the Brewerydb api, and allows you to rate, comment on and save beers you've had to your My Beers dashboard. A full CRUD app built with with React on Rails. 
 
-Things you may want to cover:
+## Technologies Used
 
-* Ruby version
+### Front End:
+ - React.js
+ - Sass
+ - JWT
+ - Axios
 
-* System dependencies
+### Back End:
+ - Ruby on Rails
+ - PostgreSQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Beer-o-meter search Demo](https://media.giphy.com/media/S5cr9rR6vglAQbyTjE/giphy.gif)
